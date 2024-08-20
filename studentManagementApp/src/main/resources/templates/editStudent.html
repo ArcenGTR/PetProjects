@@ -50,6 +50,13 @@
                         <input type="text" class="form-control" th:field="${student.email}" placeholder="Enter Students Email" />
                     </div>
 
+                    <!-- Validation messages -->
+                    <div class="alert alert-danger mt-3" role="alert" th:if="${#fields.hasErrors()}">
+                        <div th:errors="*{firstName}"></div>
+                        <div th:errors="*{lastName}"></div>
+                        <div th:errors="*{email}"></div>
+                    </div>
+
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary mt-3">Submit Changes</button>
                     </div>
